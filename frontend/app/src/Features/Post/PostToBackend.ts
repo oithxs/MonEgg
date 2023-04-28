@@ -1,25 +1,5 @@
 import React from "react";
-import axios from "axios";
-
-const Axios = axios.create({
-  baseURL: "http://localhost:8000/",
-  withCredentials: true,
-  headers: {
-    "Content-type": "Application/json",
-    Accept: "application/json",
-    "X-Requested-With": "XMLHttpRequest",
-  },
-});
-
-const api = axios.create({
-  baseURL: "http://localhost:8000/api",
-  withCredentials: true,
-  headers: {
-    "Content-type": "Application/json",
-    Accept: "application/json",
-    "X-Requested-With": "XMLHttpRequest",
-  },
-});
+import { Axios, api } from "../../lib/axios";
 
 const user = async () => {
   let userId;
