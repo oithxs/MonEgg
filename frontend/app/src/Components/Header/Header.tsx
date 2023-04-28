@@ -5,32 +5,13 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import axios from "axios";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import { Axios, api } from "../../lib/axios";
 
 const ButtonForUser = (): JSX.Element => {
-  const Axios = axios.create({
-    baseURL: "http://localhost:8000/",
-    withCredentials: true,
-    headers: {
-      "Content-type": "Application/json",
-      Accept: "application/json",
-      "X-Requested-With": "XMLHttpRequest",
-    },
-  });
-
-  const api = axios.create({
-    baseURL: "http://localhost:8000/api",
-    withCredentials: true,
-    headers: {
-      "Content-type": "Application/json",
-      Accept: "application/json",
-      "X-Requested-With": "XMLHttpRequest",
-    },
-  });
-
   Axios.get("/sanctum/csrf-cookie");
 
   api
-    .get("http://localhost:8000/api/user/", {
+    .get("/user", {
       headers: {
         "Content-type": "Application/json",
         Accept: "application/json",

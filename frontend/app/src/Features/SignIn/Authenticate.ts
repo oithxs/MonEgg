@@ -1,28 +1,7 @@
 import axios from "axios";
+import { Axios, api } from "../../lib/axios";
 
 const Authenticate = async (email: string, password: string) => {
-  const Axios = axios.create({
-    baseURL: "http://localhost:8000",
-
-    // 以下の項目は必須
-    withCredentials: true,
-    headers: {
-      "Content-type": "Application/json",
-      Accept: "application/json",
-      "X-Requested-With": "XMLHttpRequest",
-    },
-  });
-
-  const api = axios.create({
-    baseURL: "http://localhost:8000/api",
-    withCredentials: true,
-    headers: {
-      "Content-type": "Application/json",
-      Accept: "application/json",
-      "X-Requested-With": "XMLHttpRequest",
-    },
-  });
-
   const userData = {
     email: email,
     password: password,
