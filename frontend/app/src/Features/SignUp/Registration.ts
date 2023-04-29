@@ -35,11 +35,11 @@ const Registration = async (name: string, email: string, password: string, passw
         const response = await api.post("/register", userData);
         console.log("user ユーザ登録成功");
         window.location.href = "/";
-        console.log(response.data);
         return response.data;
     } catch (error: any) {
         console.log("user ユーザ登録失敗");
         console.log(error.response.data);
+        alert("ユーザ登録に失敗しました");
         throw error;
     }
 };

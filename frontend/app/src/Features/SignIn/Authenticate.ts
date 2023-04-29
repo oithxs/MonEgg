@@ -34,10 +34,11 @@ const Authenticate = async (email: string, password: string) => {
       .post("/login", userData)
       .then((response: any) => {
         console.log("ログイン成功");
-        console.log(response.data);
+        window.location.href = "/";
       })
       .catch((error: any) => {
         console.log("ログイン失敗");
+        alert("ログインに失敗しました");
       });
   });
 };

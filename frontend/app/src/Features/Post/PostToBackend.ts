@@ -57,6 +57,9 @@ const PostToBackend = async (postText: string) => {
   });
 
   console.log(response.data);
+
+  window.location.href = "/";
+  window.location.reload();
 };
 
 export default PostToBackend;
